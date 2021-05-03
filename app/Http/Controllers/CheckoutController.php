@@ -9,6 +9,7 @@ use Cart;
 use App\Order;
 use DateTime;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
@@ -81,7 +82,7 @@ class CheckoutController extends Controller
         }
 
         $order->products = serialize($products);
-        $order->user_id = 12;
+        $order->user_id = Auth()->user()->id;
         $order->save();
 
         if($data["paymentIntent"]["status"] === "succeeded"){

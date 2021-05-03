@@ -101,3 +101,11 @@
   .blog-footer p:last-child {
     margin-bottom: 0;
   }
+
+  .list-group {
+    list-style: none !important;
+  }
+
+  .list-group li {
+    text-transform: uppercase;
+  }
