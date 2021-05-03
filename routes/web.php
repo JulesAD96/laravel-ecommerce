@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 /* Product Routes */
 Route::get('/', 'ProductController@index')->name('products.index');
 Route::get('/boutique/{slug}', 'ProductController@show')->name('products.show');
-
+Route::get("/search", "ProductController@search")->name("products.search");
 /* Cart Routes list*/ 
 Route::post("cart/add", "CartController@store")->name("cart.store");
 Route::get("cart", "CartController@index")->name("cart.index");
