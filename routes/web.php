@@ -26,4 +26,8 @@ Route::group(["middleware" => ["auth"]], function() {
 
 });
 
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/sellers', 'SellerController@index');
+
 Auth::routes();
